@@ -5,6 +5,7 @@
 package login;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import java.io.PrintWriter;
  *
  * @author 232.004662
  */
+@WebServlet("/login")
 public class Login extends HttpServlet{
     
     private static final long serialVersionUID =1L;
@@ -28,7 +30,8 @@ String senha = request.getParameter("password");
 response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         if("admin".equals(usuario) && "1234".equals(senha)) {
-          out.println("<h2>Login realizado</h2>"); 
+          response.sendRedirect("dashboard.html");
+//out.println("<h2>Login realizado</h2>"); 
         }else {
           out.println("<h2>Usuario ou senha incorresto</h2>");
        }
