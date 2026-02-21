@@ -1,0 +1,91 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20 de fev. de 2026, 20:47:10
+    Author     : 232.004662
+*/
+
+.title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: white;
+    margin: 10px;
+    padding-left: 20px;
+}
+.navbar {
+    background-color: #0340B3;
+    padding: 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #97B8FF;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.nav-list a:hover {
+    background-color: #0B57FB;
+}
+
+#main {
+    background-color: #0B57FB;
+    height: 90vh;
+}
+
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background-color: white;
+    width: 20%;
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.inputUser {
+    width: 160px;
+    height: 15px;
+    padding-left: 10px;
+}
+
+.inputPassword {
+    width: 160px;
+    height: 15px;
+    padding-left: 10px;
+}
+
+#footer {
+    background-color: #437AF0;
+    width: auto;
+    height: 10vh;
+}
