@@ -31,7 +31,6 @@ response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         if("admin".equals(usuario) && "1234".equals(senha)) {
           response.sendRedirect("dashboard.html");
-//out.println("<h2>Login realizado</h2>"); 
         }else {
           out.println("<h2>Usuario ou senha incorresto</h2>");
        }

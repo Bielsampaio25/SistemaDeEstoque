@@ -31,9 +31,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 .nav-list li {
     margin: 0 15px;
-}
-
-.nav-list a {
     display: block;
     padding: 15px 20px;
     color: rgb(255, 255, 255);
