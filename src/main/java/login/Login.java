@@ -11,6 +11,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import connection.ConnectionFactory;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -25,14 +28,30 @@ public class Login extends HttpServlet{
     throws ServletException, IOException {
         
 String usuario = request.getParameter("users");
-String senha = request.getParameter("password");
+String senha = request.getParameter("psw");
 
 response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        if("admin".equals(usuario) && "1234".equals(senha)) {
-          response.sendRedirect("dashboard.html");
-        }else {
-          out.println("<h2>Usuario ou senha incorresto</h2>");
-       }
+        
+        try (var con = ConnectionFactory.getConnection()){
+            String sql = "SELECT * FROM users WHERE username= ? AND psw= ?";
+            
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, usuario);
+            stmt.setString(2, senha);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()){
+                response.sendRedirect("pages/dashboard.html");
+            }else{
+                out.println("<h2>Dados inválidos</h2>");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            out.println("<h2>Erro ao conectar ao banco de dados.</h2>");
+            
+        }
+        
     }
 }
