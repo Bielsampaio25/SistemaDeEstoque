@@ -8,15 +8,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 */
 
 #main {
-    background-color: #0340B3;
+    background-color: var(--primary-medium);
     height: 90vh;
+
+    display: flex;
+    justify-content: center;  /* centraliza horizontal */
+    align-items: center;      /* centraliza vertical */
 }
 
 .content {
     background-color: var(--white);
     padding: 40px;
     width: 350px;
-    justify-content: center;
     box-shadow: 0px 8px 25px var(--shadow-default);
     border-radius: 10px ;
 }
@@ -61,7 +64,7 @@ button:hover {
 }
 
 #footer {
-    background-color: #437AF0;
+    background-color: var(--primary-light);
     width: auto;
     height: 10vh;
 }

@@ -9,13 +9,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 :root {
     /* Cores principais */
-    --primary-dark: #0f4c75;
-    --primary-medium: #3282b8;
-    --primary-light: #bbe1fa;
+    --primary-dark: #0b2d58;
+    --primary-medium: #0d386f;
+    --primary-light: #104486;
 
     /* Cor de ação (botões / confirmação) */
-    --success: #1b9c85;
-    --success-hover: #157a6e;
+    --success: #4d510a;
+    --success-hover: #6e740e;
 
     /* Neutros */
     --white: #ffffff;
