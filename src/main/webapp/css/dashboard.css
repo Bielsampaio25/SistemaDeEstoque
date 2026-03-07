@@ -125,6 +125,56 @@ body{
 #tabelaEstoque tr:nth-child(even){
     background-color: var(--gray-light);
 }
+
+#paginacao{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controle-paginacao{
+    font-size: 15px;
+    color:var(--primary-dark);
+}
+#paginacao{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controle-paginacao label{
+    font-size: 15px;
+    color: var(--primary-dark);
+}
+
+#pagina{
+    border: 1px solid var(--primary-medium);
+    border-radius: 5px;
+}
+
+.container-btn,
+#btnVoltar,
+#btnProximo{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.container-btn,
+#btnVoltar,
+#btnProximo:hover{
+    background-color: var(--white);
+}
+
 #footer {
     background-color: var(--primary-light);
     width: auto;
