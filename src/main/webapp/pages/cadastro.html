@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Cadastro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/colors.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cadastro.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <h1 class="tituloCadastro">Sistema De Estoque</h1>
+                <ul class="nav-list">
+                    <li>Inicio</li>
+                    <li>Dashboard</li>
+                    <li><a href="consulta.html">Consulta</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <form action="/cadastro" method="POST">
+                <div class="continer">
+                    <div class="dadosPessoais">
+                        <label for="nameFirst">Nome</label>
+                        <input type="text" name="nameFirst" id="nameFirst" placeholder="Digite seu primeiro nome" />
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" />
+                        <label for="matricula">Matrícula</label>
+                        <input type="text" name="matricula" id="matricula" placeholder="Digite sua matrícula" />
+                        <label for="nameFirst">Cpf</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="Digite seu cpf" />
+                        <p>Sexo</p>
+                        <select name="sexo">
+                            <option value="">Selecione o sexo</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
+                            <option value="3">Não-binário</option>
+                            <option value="4">Outro</option>
+                        </select>
+                        <label for="dtaNascimento">Data de Nascimento</label>
+                        <input type="date" name="dtaNascimento" id="dtaNascimento" />
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" />
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" />
+                        <label for="funcao">Função</label>
+                        <input type="text" name="funcao" id="funcao" placeholder="Digite sua funcao" />
+                    </div>
+                    <div class="containerEndereco">
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep" id="cep" placeholder="Digite seu CEP" />
+                        <label for="estado">Estado</label>
+                        <input type="text" name="estado" id="estado" placeholder="Digite seu Estado" />
+                        <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade" placeholder="Digite sua Cidade" />
+                        <label for="endereco">Endereço</label>
+                        <input type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço" />
+                        <label for="numero">Número</label>
+                        <input type="text" name="numero" id="numero" placeholder="Digite seu Número" />
+                        <label for="complemento">Complemento</label>
+                        <input type="text" name="complemento" id="complemento" placeholder="Digite seu Complemento" />
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
