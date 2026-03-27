@@ -26,7 +26,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         </header>
         <main id="main">
             <form action="/cadastro" method="POST">
-                <div class="continer">
+                <div class="container">
                     <div class="dadosPessoais">
                         <label for="nameFirst">Nome</label>
                         <input type="text" name="nameFirst" id="nameFirst" placeholder="Digite seu primeiro nome" />
@@ -62,6 +62,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <input type="text" name="cidade" id="cidade" placeholder="Digite sua Cidade" />
                         <label for="endereco">Endereço</label>
                         <input type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço" />
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro" />
                         <label for="numero">Número</label>
                         <input type="text" name="numero" id="numero" placeholder="Digite seu Número" />
                         <label for="complemento">Complemento</label>
@@ -73,5 +75,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div>
             </form>
         </main>
+        <script src="../js/cep.js"></script>
     </body>
 </html>

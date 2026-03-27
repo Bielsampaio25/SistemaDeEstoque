@@ -9,7 +9,7 @@ public class UserDAO {
     
     public boolean validarLogin(UserModel userModel){
         String sql = 
-                "SELECT * FROM users WHERE username= ? AND pass= ?";
+                "SELECT * FROM users WHERE username= ? AND psw= ?";
         
         try (var con = ConnectionFactory.getConnection()){
             

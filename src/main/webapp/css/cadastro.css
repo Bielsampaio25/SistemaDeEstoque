@@ -1,6 +1,9 @@
+.tituloCadastro{
+    color: var(--white);
+}
 body {
     background-color: var(--gray-light);
-    color: var(--gray-dark);
+    color: var(--primary-dark);
 }
 
 #header {
