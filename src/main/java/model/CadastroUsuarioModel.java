@@ -15,6 +15,8 @@ public class CadastroUsuarioModel {
     private String cpf;
     private long cep;
     private String endereco;
+    private String sexo;
+    private String matricula;
     private String estado;
     private String bairro;
     private String cidade;
@@ -23,6 +25,10 @@ public class CadastroUsuarioModel {
     private String nomeUsuario;
     private String senha;
     private String funcao;
+    private String dtaNascimento;
+    private String email;
+    private String telefone;
+
 
     public String getNome() {
         return nome;
@@ -126,6 +132,46 @@ public class CadastroUsuarioModel {
 
     public void setFuncao(String funcao) {
         this.funcao = funcao;
+    }
+    
+     public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
+    public String getDtaNascimento() {
+        return dtaNascimento;
+    }
+
+    public void setDtaNascimento(String dtanascimento) {
+        this.dtaNascimento = dtaNascimento;
+    }
+    
+    public String Email() {
+        return email;
+    }
+
+    public void Email(String email) {
+        this.email = email;
+    }
+    
+     public String Telefone() {
+        return telefone;
+    }
+
+    public void Telefone(String telefone) {
+        this.telefone = telefone;
     }
     
 }
