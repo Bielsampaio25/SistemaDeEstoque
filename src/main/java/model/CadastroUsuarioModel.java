@@ -13,7 +13,7 @@ public class CadastroUsuarioModel {
     private String nome;
     private String sobrenome;
     private String cpf;
-    private long cep;
+    private String cep;
     private String endereco;
     private String sexo;
     private String matricula;
@@ -54,11 +54,11 @@ public class CadastroUsuarioModel {
         this.cpf = cpf;
     }
 
-    public long getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(long cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -154,23 +154,23 @@ public class CadastroUsuarioModel {
         return dtaNascimento;
     }
 
-    public void setDtaNascimento(String dtanascimento) {
+    public void setDtaNascimento(String dtaNascimento) {
         this.dtaNascimento = dtaNascimento;
     }
     
-    public String Email() {
+    public String getEmail() {
         return email;
     }
 
-    public void Email(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
-    
-     public String Telefone() {
+
+    public String getTelefone() {
         return telefone;
     }
 
-    public void Telefone(String telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     
