@@ -18,8 +18,8 @@ public class CadastroUsersDAO {
     public boolean cadastrar(CadastroUsuarioModel user){
         String sql = 
                 "INSERT INTO users" +
-                "(nome, sobrenome, matricula, cpf, sexo, email, telefone, funcao, cep, estado, cidade, endereco, bairro, numero, complemento)" +
-                "?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ? , ? ";
+                "(username, psw, nome, sobrenome, matricula, cpf, sexo, dtaNascimento, email, telefone, funcao, cep, estado, cidade, endereco, bairro, numero, complemento)" +
+                "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ";
         
         try (var con = ConnectionFactory.getConnection()){
             
@@ -39,13 +39,18 @@ public class CadastroUsersDAO {
             stmt.setString(10, user.getNumero());
             stmt.setString(11, user.getComplemento());
             stmt.setString(12, user.getNomeUsuario());
+            stmt.setString(12, user.getSenha());
+            stmt.setString(12, user.getDtaNascimento());
+            
             
             stmt.executeUpdate();
                   
-            }catch(Exception e){
-               
-            }        
+            return true;
+
+        } catch (Exception e) {
+           e.printStackTrace();
     return false;
-   }
+}
+    }
 }
 
