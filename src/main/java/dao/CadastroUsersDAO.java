@@ -7,6 +7,7 @@ package dao;
 import connection.ConnectionFactory;
 import java.sql.PreparedStatement;
 import model.CadastroUsuarioModel;
+import util.SenhaUtil;
 
 /**
  *
@@ -27,6 +28,8 @@ public class CadastroUsersDAO {
             PreparedStatement stmt = 
                     con.prepareStatement(sql);
             
+            String senhaHash = SenhaUtil.gerarHash(user.getSenha());
+            
             stmt.setString(1, user.getNome());
             stmt.setString(2, user.getSobrenome());
             stmt.setString(3, user.getCpf());
@@ -39,7 +42,7 @@ public class CadastroUsersDAO {
             stmt.setString(10, user.getNumero());
             stmt.setString(11, user.getComplemento());
             stmt.setString(12, user.getNomeUsuario());
-            stmt.setString(12, user.getSenha());
+            stmt.setString(12, senhaHash);
             stmt.setString(12, user.getDtaNascimento());
             
             

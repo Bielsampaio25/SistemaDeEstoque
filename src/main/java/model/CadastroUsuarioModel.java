@@ -174,5 +174,13 @@ public class CadastroUsuarioModel {
         this.telefone = telefone;
     }
     
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 }
 

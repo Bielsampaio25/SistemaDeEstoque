@@ -62,3 +62,18 @@ VALUES(
     '1500', 
     'Sala 1203, Torre Norte'
 );
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_barras VARCHAR(100) NOT NULL,
+    nome_produto VARCHAR (255) NOT NULL,
+    fabricante VARCHAR (255) NOT NULL,
+    marca VARCHAR (255) NOT NULL,
+    data_fabricante (225) DATE,
+    data_vencimento (255) DATE,
+    quantidade BIGINT,
+    valor DECIMAL (10,2),
+    total DECIMAL (10,2),
+    status VARCHAR (100)
+   
+);
