@@ -1,6 +1,5 @@
 package util;
 
-import controller.PerfilController;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -21,22 +20,23 @@ public class AuthFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         
-        HttpSession session = req.getSession(false);
+        HttpSession session = req.getSession(false); 
         
-        String uri = req.getRequestURI();
+        String uri = req.getRequestURI(); 
         
-        if(uri.contains("index.html")|| uri.contains("login") || uri.contains("css") || uri.contains("js")){
+        if(uri.contains("index.html") || uri.contains("Login")
+            || uri.contains("css") || uri.contains("js")) {
             chain.doFilter(request, response);
-        
-        return;
+            
+            return;
         }
         
-        if(session == null || session.getAttribute("ususario") == null){
+        if(session == null || session.getAttribute("usuario") == null) {
             res.sendRedirect(req.getContextPath() + "/index.html");
             return;
         }
         
-        String perfil = (String) session.getAttribute(perfil);
+        String perfil = (String) session.getAttribute("perfil");
         
         if(uri.contains("cadastro") && !"ADMIN".equals(perfil)){
             res.sendError(HttpServletResponse.SC_FORBIDDEN);

@@ -30,7 +30,7 @@ services:
       db:
         condition: service_healthy
     environment:
-       - DB_URL=jdbc:mysql://$db:3306/${MYSQL_DATABASE}?allowPublicKeyRetravalses=true&SSL=false
+       - DB_URL=jdbc:mysql://db:3306/${MYSQL_DATABASE}?allowPublicKeyRetravalses=true&SSL=false&severTimezone=UTC
        - DB_USER=${DB_USER}
        - DB_PASS=${MYSQL_ROOT_PASSWORD}
 
