@@ -13,36 +13,40 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class AuthFilter implements Filter {
-     
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) request;
+
+        HttpServletRequest  req = (HttpServletRequest)  request;
         HttpServletResponse res = (HttpServletResponse) response;
-        
-        HttpSession session = req.getSession(false); 
-        
-        String uri = req.getRequestURI(); 
-        
-        if(uri.contains("index.html") || uri.contains("Login")
-            || uri.contains("css") || uri.contains("js")) {
+
+        String uri = req.getRequestURI();
+
+        // Corrigido: incluir "/login" e "/" (raiz) na lista de rotas liberadas
+        if (uri.endsWith("index.html")
+                || uri.endsWith("/")
+                || uri.contains("/login")
+                || uri.contains("/css")
+                || uri.contains("/js")) {
             chain.doFilter(request, response);
-            
             return;
         }
-        
-        if(session == null || session.getAttribute("usuario") == null) {
+
+        HttpSession session = req.getSession(false);
+
+        if (session == null || session.getAttribute("usuario") == null) {
             res.sendRedirect(req.getContextPath() + "/index.html");
             return;
         }
-        
+
         String perfil = (String) session.getAttribute("perfil");
-        
-        if(uri.contains("cadastro") && !"ADMIN".equals(perfil)){
-            res.sendError(HttpServletResponse.SC_FORBIDDEN);
+
+        if (uri.contains("/cadastro") && !"ADMIN".equalsIgnoreCase(perfil)) {
+            res.sendError(HttpServletResponse.SC_FORBIDDEN, "Acesso negado.");
             return;
         }
-        
+
         chain.doFilter(request, response);
     }
 }

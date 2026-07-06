@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gerenciamento.css">
+    <title>Gerenciamento</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="title">Sistema De Estoque</h1>
+            <ul class="nav-list">
+                <li><a href="dashboard.html">Inicio</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li>Gerenciamento</li>
+                <li><a href="#" id="btnLogout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="container-consulta">
+            
+            <div class="painel-resumo">
+                <div class="card-resumo">
+                    <h3>Total de Produtos no Estoque</h3>
+                    <p class="valor-total" id="quantidadeTotalEstoque">1.254 unidades</p>
+                </div>
+            </div>
+
+            <div class="header-consulta">
+                <h2>Relatório de Produtos e Situação do Estoque</h2>
+            </div>
+
+            <table class="tabela-produtos">
+                <thead>
+                    <tr>
+                        <th>Cód.</th>
+                        <th>Produto</th>
+                        <th>Local/Prateleira</th>
+                        <th>Qtd. Atual</th>
+                        <th>Status do Estoque</th>
+                        <th>Ação Recomendada</th>
+                    </tr>
+                </thead>
+                <tbody id="listaProdutos">
+                    
+                    <tr>
+                        <td>001</td>
+                        <td>Teclado Mecânico</td>
+                        <td>Corredor A - Prateleira 3</td>
+                        <td>45</td>
+                        <td><span class="badge status-ok">Estoque Adequado</span></td>
+                        <td>Nenhuma</td>
+                    </tr>
+
+                    <tr>
+                        <td>002</td>
+                        <td>Mouse Sem Fio</td>
+                        <td>Corredor B - Prateleira 1</td>
+                        <td>12</td>
+                        <td><span class="badge status-alerta">Reposição Necessária</span></td>
+                        <td>Monitorar níveis</td>
+                    </tr>
+
+                    <tr>
+                        <td>003</td>
+                        <td>Monitor 24"</td>
+                        <td>Corredor C - Prateleira 5</td>
+                        <td>2</td>
+                        <td><span class="badge status-critico">Estoque Crítico</span></td>
+                        <td><button class="btn-comprar">Emitir Nota de Compra</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="../js/logout.js"></script>
+    <footer></footer>
+</body>
+
+</html>

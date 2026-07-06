@@ -1,49 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package connection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
 
-/**
- *
- * @author Usuario
- */
 public class ConnectionFactory {
-        private static final String URL = ("DB_URL");
-        private static final String USER = ("DB_USER");
-        private static final String PASSWORD = ("DB_PASS");
-        private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-        
-        public static Connection getConnection(){
-            Connection con = null;
-            
-            try {
-                if(URL == null || USER == null || PASSWORD == null){
-                    System.out.println("variavel de ambiente com problemas");
-                    return null;
-                }
+    private static final String URL      = System.getenv("DB_URL");
+    private static final String USER     = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASS");
+    private static final String DRIVER   = "com.mysql.cj.jdbc.Driver";
 
-                Class.forName(DRIVER);
-
-                con = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("Banco de dados conectado.");
-
-            }catch(ClassNotFoundException e){
-                System.out.println("Erro no JDBC");
-                e.printStackTrace();
-            }catch(SQLException e){
-                System.out.println("Erro no SQL");
-                e.printStackTrace();
-            }catch (Exception e) {
-                System.out.println("Banco de dados não conectado");
-                e.printStackTrace();
+    public static Connection getConnection() {
+        Connection con = null;
+        try {
+            if (URL == null || USER == null || PASSWORD == null) {
+                System.out.println("Variaveis de ambiente ausentes: DB_URL, DB_USER ou DB_PASS.");
+                return null;
             }
-            
-            return con;
-             
+            Class.forName(DRIVER);
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Banco de dados conectado.");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver JDBC nao encontrado.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Erro ao conectar ao banco de dados.");
+            e.printStackTrace();
         }
+        return con;
+    }
 }

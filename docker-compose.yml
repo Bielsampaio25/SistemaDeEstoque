@@ -14,12 +14,12 @@ services:
       - db_data:/var/lib/mysql
       - ./db:/docker-entrypoint-initdb.d
     healthcheck:
-       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
-       interval: 10s
-       timeout: 5s
-       retries: 5
-       start_period: 20s
-       
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
   app:
     build: .
     container_name: app-estoque
@@ -30,9 +30,10 @@ services:
       db:
         condition: service_healthy
     environment:
-       - DB_URL=jdbc:mysql://db:3306/${MYSQL_DATABASE}?allowPublicKeyRetravalses=true&SSL=false&severTimezone=UTC
-       - DB_USER=${DB_USER}
-       - DB_PASS=${MYSQL_ROOT_PASSWORD}
+      # Corrigido: parâmetros JDBC com typos corrigidos
+      - DB_URL=jdbc:mysql://db:3306/${MYSQL_DATABASE}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      - DB_USER=${DB_USER}
+      - DB_PASS=${MYSQL_ROOT_PASSWORD}
 
 volumes:
   db_data:

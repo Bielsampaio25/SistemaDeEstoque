@@ -1,0 +1,159 @@
+#main {
+    background-color: var(--primary-medium);
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;  /* centraliza horizontal */
+    align-items: center;      /* centraliza vertical */
+}
+
+/* Container Principal (Reaproveitando a lógica do seu .content, mas mais largo para a tabela) */
+.container-consulta {
+    width: 100%;
+    max-width: 950px; /* Mais largo para caber a tabela confortavelmente */
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-default);
+    overflow-x: auto; /* Adiciona scroll horizontal se a tela for muito pequena */
+}
+
+/* Painel de Resumo do Estoque */
+.painel-resumo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card-resumo {
+    background-color: var(--primary-medium);
+    color: var(--white);
+    padding: 20px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-default);
+}
+
+.card-resumo h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.card-resumo .valor-total {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Títulos */
+.header-consulta h2 {
+    text-align: center;
+    color: var(--gray-dark);
+    margin-bottom: 25px;
+}
+
+/* Estilização da Tabela */
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-medium);
+    color: var(--gray-dark);
+    font-size: 15px;
+}
+
+.tabela-produtos th {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.03); /* Fundo muito sutil para destacar o cabeçalho */
+    border-bottom: 2px solid var(--gray-medium);
+}
+
+/* Badges de Status do Estoque */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--white);
+    display: inline-block;
+    text-align: center;
+}
+
+/* Cores de status (utilizando variáveis padrão ou cores hexadecimais como fallback) */
+.status-ok {
+    background-color: var(--success, #28a745);
+}
+
+.status-alerta {
+    background-color: #ffc107; /* Amarelo de alerta */
+    color: #333; /* Texto escuro para contraste no amarelo */
+}
+
+.status-critico {
+    background-color: #dc3545; /* Vermelho crítico */
+}
+
+/* Botão de Emitir Nota (Baseado no seu botão, mas com largura automática e menor) */
+.btn-comprar {
+    width: auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--success);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease, transform .2s ease;
+}
+
+.btn-comprar:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsividade (Alinhada com o seu CSS original) */
+@media (max-width: 768px) {
+    .container-consulta {
+        padding: 30px 20px;
+    }
+
+    .card-resumo {
+        padding: 15px 25px;
+    }
+
+    .tabela-produtos th,
+    .tabela-produtos td {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-consulta {
+        padding: 25px 15px;
+    }
+
+    .header-consulta h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-resumo h3 {
+        font-size: 14px;
+    }
+
+    .card-resumo .valor-total {
+        font-size: 22px;
+    }
+
+    .btn-comprar {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

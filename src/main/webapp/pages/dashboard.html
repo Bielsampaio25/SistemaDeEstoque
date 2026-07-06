@@ -27,17 +27,17 @@
         <section id="resumoEstoque">
             <div class="card-resumo">
                 <h3 class="titulo-card">Entrada</h3>
-                <p class="valor-card">100</p>
+                <p id="cardEntrada" class="valor-card">100</p>
             </div>
 
             <div class="card-resumo">
                 <h3 class="titulo-card">Saída</h3>
-                <p class="valor-card">80</p>
+                <p id="cardSaida" class="valor-card">80</p>
             </div>
 
             <div class="card-resumo">
                 <h3 class="titulo-card">Total</h3>
-                <p class="valor-card">20</p>
+                <p id="cardTotal" class="valor-card">20</p>
             </div>
         </section>
         <section id="filtro">
@@ -70,9 +70,12 @@
                             <th>Nome</th>
                             <th>Fabricante</th>
                             <th>Marca</th>
+                            <th>dataFabricacao</th>
+                            <th>dataVencimento</th>
                             <th>Quantidade</th>
                             <th>Valor unitário</th>
                             <th>Total</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="corpoTabela">
@@ -81,18 +84,24 @@
                             <td>Mouse</td>
                             <td>Logitech</td>
                             <td>MX</td>
+                            <td>15/03/2024</td>
+                            <td>15/03/2027</td>
                             <td>10</td>
                             <td>R$80,00</td>
                             <td>R$800,00</td>
+                            <td>Garantia de Fábrica Ativa</td>
                         </tr>
                         <tr class="linha-item">
                             <td>123456780</td>
                             <td>Teclado</td>
                             <td>Logitech</td>
                             <td>MXC</td>
+                            <td>15/03/2024</td>
+                            <td>15/03/2027</td>
                             <td>10</td>
                             <td>R$90,00</td>
                             <td>R$900,00</td>
+                            <td>Garantia de Fábrica Ativa</td>
                         </tr>
                     </tbody>
                 </table>
@@ -108,15 +117,16 @@
                     <option value="4">4</option>
                 </select>
             </div>
-            <div class="conteiner-btn">
+            <div class="container-btn">
                 <button id="btnVoltar" class="btn-voltar">Voltar</button>
                 <button id="btnProximo" class="btn-proximo">Próximo</button>
             </div>
         </section>
         </main>
+        <script src="../js/logout.js"></script>
         <script src="../js/dashboard.js"></script>
         <script src="../js/filtro.js"></script>
-        <footer id="footer"></footer>
+        <footer></footer>
     </body>
 
 </html>

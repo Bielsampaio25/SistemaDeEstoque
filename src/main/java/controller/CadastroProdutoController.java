@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import dao.CadastroProdutosDAO;
@@ -34,9 +30,9 @@ public class CadastroProdutoController extends HttpServlet{
             CadastroProdutosDAO dao = new CadastroProdutosDAO();
             
             if(dao.salvar(produto)){
-                response.sendRedirect("pages/dashboard.html");
+                response.sendRedirect(request.getContextPath() + "/pages/dashboard.html");
             }else{
-                response.sendRedirect("pages/cadastroProdutos.html");
+                response.sendRedirect(request.getContextPath() + "/pages/cadastroProdutos.html");
             }
         }
     }

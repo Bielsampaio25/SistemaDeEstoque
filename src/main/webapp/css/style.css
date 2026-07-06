@@ -1,59 +1,99 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 20 de fev. de 2026, 20:47:10
-    Author     : 232.004662
-*/
-
-.title{
+.title {
     display: flex;
     align-items: center;
-    height: 50px;
-    color: white;
-    margin: 10px;
-    padding-left: 20px;
+    color: var(--white);
+    height: 60px;
+    margin-left: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
+
 .navbar {
     background-color: var(--primary-dark);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* separa título e menu */
-    padding: 0 20px;
+    padding: 0 25px;
+    min-height: 70px;
+    flex-wrap: wrap;
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
     margin: 0;
     padding: 0;
 }
 
 .nav-list li {
-    margin: 0 15px;
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 110px;
+    padding: 12px 18px;
+    color: var(--white);
     background-color: #13509d;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
 }
 
 .nav-list li:hover {
     background-color: #1867ca;
+    transform: translateY(-2px);
 }
 
-a{
+a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
-#footer {
+footer {
+    width: 100%;
+    min-height: 60px;
     background-color: var(--primary-light);
-    width: auto;
-    height: 10vh;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .title {
+        margin: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-list {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-list li {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
 }

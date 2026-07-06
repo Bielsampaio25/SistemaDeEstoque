@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import dao.CadastroUsersDAO;
@@ -13,18 +9,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import model.CadastroUsuarioModel;
 
-/**
- *
- * @author 232.004662
- */
 @WebServlet("/cadastro")
-public class CadastroController extends HttpServlet{
-    
+public class CadastroController extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
+            throws ServletException, IOException {
+
         CadastroUsuarioModel user = new CadastroUsuarioModel();
-        
+
         user.setNome(request.getParameter("nameFirst"));
         user.setSobrenome(request.getParameter("sobrenome"));
         user.setMatricula(request.getParameter("matricula"));
@@ -43,13 +35,14 @@ public class CadastroController extends HttpServlet{
         user.setBairro(request.getParameter("bairro"));
         user.setNumero(request.getParameter("numero"));
         user.setComplemento(request.getParameter("complemento"));
-        
+
         CadastroUsersDAO dao = new CadastroUsersDAO();
-        
-        if(dao.cadastrar(user)){
-            response.sendRedirect("/pages/dashboard.html");
-        }else{
-            response.sendRedirect("/pages/cadastro.html");
+
+        // Corrigido: usar getContextPath() para caminhos relativos corretos
+        if (dao.cadastrar(user)) {
+            response.sendRedirect(request.getContextPath() + "/pages/dashboard.html");
+        } else {
+            response.sendRedirect(request.getContextPath() + "/pages/cadastro.html");
         }
     }
 }

@@ -1,182 +1,226 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 28 de fev. de 2026, 19:55:23
-    Author     : Usuario
-*/
-
-body{
+body {
     background-color: var(--primary-medium);
     color: var(--white);
+    margin: 0;
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#header{
-    text-align: center;
+main {
+    max-width: 1400px;
+    margin: 30px auto;
 }
 
-#tituloDashboard{
-    font-size: 20px;
-    color: var(--white);
-    margin-bottom: 10px;
-}
+/* ---------- RESUMO ---------- */
 
-#resumoEstoque{
+#resumoEstoque {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
     gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-.card-resumo{
-    background-color: var(--white);
-    box-shadow: 0 4px 6px var(--shadow-default);
-    border-radius: 10px;
+.card-resumo {
     flex: 1;
+    min-width: 220px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 8px var(--shadow-default);
+    transition: transform .2s ease;
 }
 
-.card-resumo:hover{
-    transform: translateY(-5px);
+.card-resumo:hover {
+    transform: translateY(-4px);
 }
 
-.titulo-card{
-    font-size: 12px;
+.titulo-card {
+    color: var(--primary-medium);
+    font-size: 18px;
     margin-bottom: 10px;
-    color: var(--primary-medium)
 }
 
-.valor-card{
-    font-size: 15px;
-    font-weigth: bold;
-    color: var(--primary-dark)
+.valor-card {
+    color: var(--primary-dark);
+    font-size: 24px;
+    font-weight: bold;
 }
 
-#filtro{
+/* ---------- FILTRO ---------- */
+
+#filtro {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margim-bottom: 20px;
+    align-items: end;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-.grupo-filtro{
+.grupo-filtro {
     display: flex;
     flex-direction: column;
 }
 
-.input-filtro,
-.select-filtro{
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: 1px solid var(--gray-medium);
-    outline: none;
-}
-
-.input-filtro:focus,
-.select-filtro:focus{
-    border-color: var(--primary-medium)
-}
-
-.botao-pesquisa
-.btn-pesquisa{
-    margin-top: 0;
-    padding: 10px 20px;
-    background-color: var(--white);
-    color: var(--primary-dark);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.botao-pesquisa:hover
-.btn-pesquisa:hover{
-    background-color: var(--primary-medium);
-    color: var(--white);
-}
-
-.tabela-wrapper{
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--white);
-    box-shadow: 0 4px 6px var(--shadow-default);
-    overflow: hidden;
-    color: black;
-}
-
-#tabelaEstoque th,
-#tabelaEstoque td{
-    padding: 8px 15px;
-    text-align: center;
-    border-bottom: 1px solid var(--primary-dark);
-}
-
-#tabelaEstoque th{
-    background-color: var(--primary-medium);
-    color: var(--white);
+.grupo-filtro label {
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
-#tabelaEstoque tr:nth-child(even){
+.input-filtro,
+.select-filtro {
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 6px;
+}
+
+.input-filtro:focus,
+.select-filtro:focus {
+    outline: none;
+    border-color: var(--primary-medium);
+}
+
+.btn-pesquisa {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--success);
+    color: var(--white);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-pesquisa:hover {
+    background-color: var(--success-hover);
+}
+
+/* ---------- TABELA ---------- */
+
+#tabelaEstoqueContainer {
+    margin-top: 20px;
+}
+
+.tabela-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-default);
+}
+
+#tabelaEstoque {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--gray-dark);
+}
+
+#tabelaEstoque th,
+#tabelaEstoque td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+#tabelaEstoque th {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+#tabelaEstoque tbody tr:nth-child(even) {
     background-color: var(--gray-light);
 }
 
-#paginacao{
-    margin-top: 20px;
+#tabelaEstoque tbody tr:hover {
+    background-color: #e9eef7;
+}
+
+/* ---------- PAGINAÇÃO ---------- */
+
+#paginacao {
+    margin-top: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.controle-paginacao {
+    display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.controle-paginacao{
-    font-size: 15px;
-    color:var(--primary-dark);
+.controle-paginacao label {
+    color: var(--white);
 }
-#paginacao{
-    margin-top: 20px;
+
+#pagina {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-medium);
+}
+
+.conteiner-btn {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
 }
 
-.controle-paginacao label{
-    font-size: 15px;
-    color: var(--primary-dark);
-}
-
-#pagina{
-    border: 1px solid var(--primary-medium);
-    border-radius: 5px;
-}
-
-.container-btn,
 #btnVoltar,
-#btnProximo{
-    margin-top: 10px;
+#btnProximo {
+    width: auto;
     padding: 10px 20px;
+    border-radius: 6px;
     background-color: var(--primary-dark);
     color: var(--white);
     border: none;
-    border-radius: 100px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: .3s;
 }
 
-.container-btn,
-#btnVoltar,
-#btnProximo:hover{
-    background-color: var(--white);
-}
-
-#footer {
+#btnVoltar:hover,
+#btnProximo:hover {
     background-color: var(--primary-light);
-    width: auto;
-    height: 10vh;
-} 
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+@media (max-width: 992px) {
+
+    #resumoEstoque {
+        flex-direction: column;
+    }
+
+    #filtro {
+        justify-content: flex-start;
+    }
+
+    .grupo-filtro {
+        width: 100%;
+    }
+
+    .input-filtro,
+    .select-filtro {
+        width: 100%;
+    }
+
+    .btn-pesquisa {
+        width: 100%;
+    }
+
+    #paginacao {
+        flex-direction: column;
+    }
+
+    .conteiner-btn {
+        width: 100%;
+    }
+
+    #btnVoltar,
+    #btnProximo {
+        flex: 1;
+    }
+}

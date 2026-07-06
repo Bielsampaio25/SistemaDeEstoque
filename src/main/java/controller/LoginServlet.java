@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet{
             HttpSession session=
                     request.getSession();
             
-            session.setAttribute("usuario", user.getUsername());
+             session.setAttribute("usuario", user.getUsername());
              session.setAttribute("perfil", user.getFuncao());
             
             response.sendRedirect(request.getContextPath() + "/pages/dashboard.html");

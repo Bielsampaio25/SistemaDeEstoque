@@ -6,12 +6,12 @@
     <version>1.0</version>
     <packaging>war</packaging>
     <name>SistemaDeEstoque-1.0-SNAPSHOT</name>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>11.0.0-M1</jakartaee>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
@@ -19,10 +19,11 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Corrigido: espaço removido do artifactId -->
         <dependency>
-             <groupId>com.mysql</groupId>
-             <artifactId>mysql-connector-j </artifactId>
-             <version>8.1.0</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -35,7 +36,7 @@
             <version>0.4</version>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
