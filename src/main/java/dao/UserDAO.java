@@ -25,8 +25,11 @@ public class UserDAO {
                 
                 boolean senhaValida = SenhaUtil.verificarSenha(
                        userModel.getPassword(),
-                        hashBanco
-                );
+                        hashBanco);
+                System.out.println("Usuário digitado: " + userModel.getUsername());
+                System.out.println("Senha digitada: " + userModel.getPassword());
+                System.out.println("Hash do banco: " + hashBanco);
+                System.out.println("Senha válida: " + senhaValida);
                 
                 if(senhaValida){
                     UserModel user = new UserModel();

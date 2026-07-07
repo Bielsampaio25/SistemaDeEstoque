@@ -13,3 +13,4 @@ public class SenhaUtil {
         return BCrypt.checkpw(senhaDigitada, hash); //verifia a senha digitada pelo usario
     }
 }
+

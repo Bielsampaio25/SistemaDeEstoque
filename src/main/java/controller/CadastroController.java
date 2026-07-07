@@ -1,12 +1,13 @@
 package controller;
 
+import java.io.IOException;
+
 import dao.CadastroUsersDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import model.CadastroUsuarioModel;
 
 @WebServlet("/cadastro")
@@ -16,6 +17,9 @@ public class CadastroController extends HttpServlet {
             throws ServletException, IOException {
 
         CadastroUsuarioModel user = new CadastroUsuarioModel();
+
+        System.out.println("=== CadastroController ===");
+        System.out.println("Usuário: " + request.getParameter("nomeUsuario"));
 
         user.setNome(request.getParameter("nameFirst"));
         user.setSobrenome(request.getParameter("sobrenome"));
