@@ -1,6 +1,6 @@
 async function carregarEstoque() {
     try {
-        const response = await fetch("http://localhost:8080/api/estoque");
+        const response = await fetch("../api/estoque");
         const dados = await response.json();
 
         const tabela = document.getElementById("corpoTabela");

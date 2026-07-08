@@ -35,7 +35,7 @@ async function carregarProdutos() {
                 acao = "Monitorar níveis";
             } else {
                 status = '<span class="badge status-critico">Estoque Crítico</span>';
-                acao = '<button class="btn-comprar">Emitir Nota de Compra</button>';
+                acao = '<span class="badge status-critico">Necessário Emitir Nota de Compra</span>';
             }
 
             linhas += `
