@@ -118,6 +118,35 @@
     transform: translateY(-2px);
 }
 
+.acoes {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente (opcional) */
+    margin-top: 25px;
+}
+
+.btn-cadastrar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+    border-radius: 8px;
+
+    background: linear-gradient(135deg, var(--primary-medium), var(--primary-dark));
+    color: var(--white);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.btn-cadastrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-default);
+}
+
 /* Responsividade (Alinhada com o seu CSS original) */
 @media (max-width: 768px) {
     .container-consulta {

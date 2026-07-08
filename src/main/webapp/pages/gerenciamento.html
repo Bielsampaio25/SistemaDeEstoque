@@ -16,7 +16,7 @@
         <nav class="navbar">
             <h1 class="title">Sistema De Estoque</h1>
             <ul class="nav-list">
-                <li><a href="dashboard.html">Inicio</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li>Gerenciamento</li>
                 <li><a href="#" id="btnLogout">Sair</a></li>
@@ -25,7 +25,7 @@
     </header>
     <main id="main">
         <section class="container-consulta">
-            
+
             <div class="painel-resumo">
                 <div class="card-resumo">
                     <h3>Total de Produtos no Estoque</h3>
@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody id="listaProdutos">
-                    
+
                     <tr>
                         <td>001</td>
                         <td>Teclado Mecânico</td>
@@ -79,6 +79,9 @@
 
                 </tbody>
             </table>
+            <div class="acoes">
+                <button class="btn-cadastrar" onclick="window.location.href='cadastroProdutos.html'">Cadastrar Produto</button>
+            </div>
         </section>
     </main>
     <script src="../js/logout.js"></script>

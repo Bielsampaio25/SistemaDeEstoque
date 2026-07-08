@@ -23,31 +23,47 @@ CREATE TABLE IF NOT EXISTS users (
     complemento  VARCHAR(50)
 );
 
--- Senha inicial: "admin123" (deve ser substituída por hash BCrypt em produção)
-INSERT IGNORE INTO users (username, psw, nome, sobrenome, matricula, cpf, sexo, data_nasc,
-    email, telefone, funcao, cep, estado, cidade, endereco, bairro, numero, complemento)
+INSERT IGNORE INTO users (
+    username,
+    psw,
+    nome,
+    sobrenome,
+    matricula,
+    cpf,
+    sexo,
+    data_nasc,
+    email,
+    telefone,
+    funcao,
+    cep,
+    estado,
+    cidade,
+    endereco,
+    bairro,
+    numero,
+    complemento
+)
 VALUES (
     'admin',
-    '$2a$10$7EqJtq98hPqEX7fNZaFWoOa0doK6/bOzKFGkwOkIlJGSR0QDwNHiO', -- hash de "admin123"
-    'Roberto',
-    'Santos Ferreira',
-    '00011234',
-    '954.432.600-10',
-    'Masculino',
-    '1990-05-15',
-    'roberto_ferreira32@gmail.com',
-    '(71) 98876-5432',
+    '$2a$10$3IQDugIm9lk4oqoZ6IPCpuGSLLVo/HNEk8PpZsXmIwSInEtoRofnC',
+    'Hugo',
+    'Pamponet',
+    '20260708001',
+    '529.982.247-25',
+    '1',
+    '1994-06-09',
+    'hugopomponet@gmail.com',
+    '(71) 98765-4321',
     'ADMIN',
-    '41830-020',
+    '40140-110',
     'BA',
     'Salvador',
-    'Avenida Tancredo Neves',
-    'Caminho das Arvores',
-    '1500',
-    'Sala 1203, Torre Norte'
+    'Avenida Sete de Setembro',
+    'Barra',
+    '34',
+    'de 3579 ao fim - lado impar'
 );
 
--- Corrigido: sintaxe correta para criação da tabela produtos
 CREATE TABLE IF NOT EXISTS produtos (
     id              INT AUTO_INCREMENT PRIMARY KEY,
     codigo_barras   VARCHAR(100)    NOT NULL,
