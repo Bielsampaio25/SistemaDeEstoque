@@ -111,29 +111,29 @@ main {
     box-shadow: 0 4px 8px var(--shadow-default);
 }
 
-#tabelaEstoque {
+#tabela-produtos {
     width: 100%;
     border-collapse: collapse;
     color: var(--gray-dark);
 }
 
-#tabelaEstoque th,
-#tabelaEstoque td {
+#tabela-produtos th,
+#tabela-produtos td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid var(--gray-medium);
 }
 
-#tabelaEstoque th {
+#tabela-produtos th {
     background-color: var(--primary-dark);
     color: var(--white);
 }
 
-#tabelaEstoque tbody tr:nth-child(even) {
+#tabela-produtos tbody tr:nth-child(even) {
     background-color: var(--gray-light);
 }
 
-#tabelaEstoque tbody tr:hover {
+#tabela-produtos tbody tr:hover {
     background-color: #e9eef7;
 }
 
